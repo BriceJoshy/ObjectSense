@@ -1,3 +1,7 @@
-import cv2 as cv
-import numpy as np
-import url
+import csv
+
+import pandas as pd
+
+
+df = pd.read_csv("file.csv", delim_whitespace=True)
+print(df)

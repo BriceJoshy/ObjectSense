@@ -1,1 +1,2 @@
-        index += 1
+d(image_name)
+        # print(image_array)
