@@ -13,8 +13,8 @@ with open("images.csv", mode="r") as file:
     csvfile = csv.reader(file)
     # that returns the reader object that iterates throughout the lines in the specified CSV document.
     # for every line adding the column[0] as the list row for the empty list created above
-    for lines in csvfile:
-        image_from_csv_list.append(lines[0])
+    for column in csvfile:
+        image_from_csv_list.append(column[0])
 
     print(image_from_csv_list)
     for i in range(0, len(image_from_csv_list)):
