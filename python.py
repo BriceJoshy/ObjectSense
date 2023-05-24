@@ -5,6 +5,36 @@ import numpy as np
 import requests
 import csv
 
+"""Using the deeplabv3+ model silhoutteX.h5"""
+
+import os
+
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
+import numpy as np
+import cv2 as cv
+
+#  extract all the input images
+from glob import glob
+
+# progress bar
+from tqdm import tqdm
+
+# ml library
+import tensorflow as tf
+from tensorflow import keras
+
+# Code within a with statement will be able to access custom objects by name
+from keras.utils import CustomObjectScope
+from metrics import dice_loss, dice_coeff, iou
+
+""" Defining Global Parameters """
+# height
+H = 512
+# width
+W = 512
+
+
 #  creating a empty list for storing the rows of the single column of the csv file
 image_from_csv_list = []
 #  setting the indexx for the image name so as to prevent the images from crashing while 'imshow' because of the same name
@@ -15,7 +45,6 @@ with open("images.csv", mode="r") as file:
     # for every line adding the column[0] as the list row for the empty list created above
     for column in csvfile:
         image_from_csv_list.append(column[0])
-
     print(image_from_csv_list)
     for i in range(0, len(image_from_csv_list)):
         url = image_from_csv_list[i]
