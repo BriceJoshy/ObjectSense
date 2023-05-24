@@ -54,8 +54,10 @@ with open("images.csv", mode="r") as file:
         image = np.asarray(bytearray(response.read()), dtype="uint8")
         #  reading the image as it is without any change
         image = cv.imdecode(image, cv.IMREAD_COLOR)
-        cv.imshow(f"url_image_{index}", image)
+        # cv.imshow(f"url_image_{index}", image)
         index += 1
+        resized_image = cv.resize(image, [500, 500])
+        cv.imshow(f"url_image_{index}", resized_image)
 
     cv.waitKey(0)
     cv.destroyAllWindows()
