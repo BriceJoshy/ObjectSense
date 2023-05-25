@@ -163,9 +163,10 @@ if __name__ == "__main__":
 
             index += 1
             ###############
-        print(image_name_saved)
-        row = [image_name_saved]
+
+        # row = image_name_saved
 
         with open("final_outout.csv", mode="w", newline="") as file:
-            writter = csv.writer(file, delimiter=",")
-            writter.writerows(row)
+            writter = csv.writer(file)
+            for rows in image_name_saved:
+                writter.writerow([rows])
