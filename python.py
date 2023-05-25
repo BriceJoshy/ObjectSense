@@ -159,7 +159,10 @@ if __name__ == "__main__":
             final_image = masked_image + background_mask
 
             image_name_saved.append(f"image_{index}.png")
-            cv.imwrite(f"removed_background_images/{image_name_saved}", final_image)
+            print(image_name_saved)
+            cv.imwrite(
+                f"removed_background_images/{image_name_saved[index]}", final_image
+            )
 
             index += 1
             ###############
