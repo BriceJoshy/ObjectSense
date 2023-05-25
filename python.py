@@ -61,6 +61,7 @@ if __name__ == "__main__":
 
     #  creating a empty list for storing the rows of the single column of the csv file
     image_from_csv_list = []
+    image_name_saved = []
     #  setting the indexx for the image name so as to prevent the images from crashing while 'imshow' because of the same name
     with open("images.csv", mode="r") as file:
         csvfile = csv.reader(file)
@@ -156,5 +157,15 @@ if __name__ == "__main__":
             )
             background_mask = background_mask * [255, 255, 255]
             final_image = masked_image + background_mask
-            cv.imwrite(f"removed_background_images/{index}.png", final_image)
+
+            image_name_saved.append(f"image_{index}.png")
+            cv.imwrite(f"removed_background_images/{image_name_saved}", final_image)
+
             index += 1
+            ###############
+        print(image_name_saved)
+        row = [image_name_saved]
+
+        with open("final_outout.csv", mode="w", newline="") as file:
+            writter = csv.writer(file, delimiter=",")
+            writter.writerows(row)
