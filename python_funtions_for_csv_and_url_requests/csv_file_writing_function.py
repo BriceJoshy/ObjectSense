@@ -1,14 +1,11 @@
-# This file shows the basics of reading data from the csv file
+#  this file shows the python function to write into a csv file
+#  used for  storing the images after the images are read from the origianl csv file for background removal
+#  and contour cropping then saved as the url in a seperate csv file for storage
 
 
 import csv
 
-
-def csv_file_reading():
-    data = ["hi", "hello", "welcome"]
-    with open("output.csv", "w") as file:
-        csvfile = csv.writer(file)
-        # that returns the reader object that iterates throughout the lines in the specified CSV document.
-        csvfile.writerow(data)
-
-        #  i is used to print as elements and not as array
+row = ["name_of_image"]
+with open("output.csv", mode="w", newline="") as file:
+    writter = csv.writer(file)
+    writter.writerow(row)
