@@ -1,0 +1,16 @@
+https://towardsdatascience.com/faster-r-cnn-object-detection-implemented-by-keras-for-custom-data-from-googles-open-images-125f62b9141a
+
+
+https://tryolabs.com/blog/2018/01/18/faster-r-cnn-down-the-rabbit-hole-of-modern-object-detection/
+
+https://towardsdatascience.com/deep-learning-for-object-detection-a-comprehensive-review-73930816d8d9
+
+https://medium.com/comet-app/review-of-deep-learning-algorithms-for-object-detection-c1f3d437b852
+
+http://islab.ulsan.ac.kr/files/announcement/513/rcnn_pami.pdf
+
+http://www.huppelen.nl/publications/selectiveSearchDraft.pdf
+
+https://arxiv.org/pdf/1504.08083.pdf
+
+http://cs.brown.edu/~pff/segment/
