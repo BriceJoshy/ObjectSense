@@ -1,2 +1,7 @@
 silhouetteX.h5
 *.json
+*.gz
+*.rar
+*.zip
+*.7zip
+faster_rcnn_resnet50_v1_640x640_coco17_tpu-8
