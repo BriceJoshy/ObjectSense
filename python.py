@@ -79,7 +79,7 @@ if __name__ == "__main__":
             image = np.asarray(bytearray(response.read()), dtype="uint8")
             #  reading the image as it is without any change
             image = cv.imdecode(image, cv.IMREAD_COLOR)
-            filter = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
+            filter = np.array([[-1, -177, -1], [-1, 9, -1], [-1, -1, -1]])
             sharpedned = cv.filter2D(image, -1, filter)
             cv.imshow("sharp image", sharpedned)
 
