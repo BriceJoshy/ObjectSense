@@ -79,6 +79,9 @@ if __name__ == "__main__":
             image = np.asarray(bytearray(response.read()), dtype="uint8")
             #  reading the image as it is without any change
             image = cv.imdecode(image, cv.IMREAD_COLOR)
+            filter = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
+            sharpedned = cv.filter2D(image, -1, filter)
+            cv.imshow("sharp image", sharpedned)
 
             """Reading the images"""
             # always convert image to the 3 channel BGR color image.
@@ -86,8 +89,8 @@ if __name__ == "__main__":
             #  now the image is an numpy array
             # i.e why the _ is given as there are more parameters in shape
             # save for later
-            height, width, _ = image.shape
-            resized_image = cv.resize(image, (W, H))
+            height, width, _ = sharpedned.shape
+            resized_image = cv.resize(sharpedned, (W, H))
             # print(resized_image.shape)
             # Normalization of the resized_image
             # now the range of the pixel value is btw 0 and 1 as is divided by the max pixel value
@@ -155,7 +158,7 @@ if __name__ == "__main__":
             background_mask = np.concatenate(
                 [background_mask, background_mask, background_mask], axis=-1
             )
-            background_mask = background_mask * [255, 255, 255]
+            background_mask = background_mask * [0, 0, 255]
             final_image = masked_image + background_mask
 
             image_name_saved.append(f"image_{index}.png")
